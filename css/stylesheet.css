@@ -1,0 +1,47 @@
+*
+{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-image: url("/Users/nikisharomain/Desktop/spaceship_game/media/game_wallpaper.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#spaceshipContainer
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 16px;
+    margin:auto;
+    justify-items: center;
+    height: 100vh;
+}
+
+.spaceships
+{
+    height: 50px;
+    width: 50px;
+    background-color: brown;
+}
+
+#canon
+{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    align-self: end;
+    grid-column: 1;
+}
+
+#bullet{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    display: none;
+}
