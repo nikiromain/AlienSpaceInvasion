@@ -59,8 +59,8 @@
             <!-- Select Difficulty Level-->
             <section id = "difficulty">
                 <h3>Select Your Difficulty</h3>
-                <button type = "button" id = "easyLevel">Easy</button>
-                <button type = "button" id = "hardLevel">Hard</button>
+                <button type = "button" id = "easyLevelBtn">Easy</button>
+                <button type = "button" id = "hardLevelBtn">Hard</button>
             </section>
 
            </section>
@@ -68,15 +68,19 @@
         <!--Game Container-->
         <section id = "playArea">
             <section id = "spaceshipContainer">
-                <div id = "spaceship1" class = "spaceships">1</div>
-                <div id = "spaceship2" class = "spaceships">2</div>
-                <div id = "spacehsip3" class = "spaceships">3</div>
-                <div id = "spacehsip4" class = "spaceships">4</div>
-                <div id = "spaceship5" class = "spaceships">5</div>
+               <div class = "spaceships"><img src = "media/spaceship.png"> <h2 class="problem"></h2> </div>
+               <div class = "spaceships"><img src = "media/spaceship.png"> <h2 class="problem"></h2> </div>
+               <div class = "spaceships"><img src = "media/spaceship.png"> <h2 class="problem"></h2> </div>
+               <div class = "spaceships"><img src = "media/spaceship.png"> <h2 class="problem"></h2> </div>
+               <div class = "spaceships"><img src = "media/spaceship.png"> <h2 class="problem"></h2> </div>
 
                 <!--Cannon-->
                 <div id = "cannon">
-                <div id="bullet"></div>
+                <div id="bullet">
+                    <img src = "media/bullet-2.png">
+                </div>
+                <img src = "media/tank.png">
+                <h3 id="canonAnswer"></h3>
                 </div>
             </section>
 
@@ -84,6 +88,18 @@
             <div id = "timer"></div>
             <div id = "hits"></div>
             <div id = "misses"></div>
+        </section>
+
+        <section id = gameOverContainer>
+            <div id = "gameOver">
+                 <h2 class = "animate__animated animate__hinge">Game Over</h2>
+                <div id="gameOverspaceships">
+                    <img src = "media/spaceship.png" class = "animate__animated animate__fadeInRight animate__delay-1s">
+                    <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-3s ">
+                    <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-2s">
+                    <button type = "button" id = "playAgainBtn">Play Again?</button>
+                </div>
+            </div>
         </section>
     </main>
     <script src = "js/app.js"></script>

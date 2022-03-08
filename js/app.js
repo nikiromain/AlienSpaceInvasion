@@ -1,6 +1,5 @@
 
 
-
 const main = (()=>
 {
     let timeRemaining = 90
@@ -14,8 +13,10 @@ const main = (()=>
 
     const splayArea = document.querySelector("#playArea")
     const spaceshipList = document.querySelectorAll(".spaceships")
+    const problemsHeader = document.querySelectorAll(".problem")
     const cannon = document.querySelector("#cannon")
     const bullet = document.querySelector("#bullet")
+    const canonText = document.querySelector("#canonAnswer")
 
     const timer = document.querySelector("#timer")
     const hitsCounter = document.querySelector("#hits")
@@ -35,9 +36,32 @@ const main = (()=>
     const playerName = document.querySelector("#playerName")
 
     const difficultyContainer = document.querySelector("#difficulty")
-    const easyLevel = document.querySelector("#easyLevel")
-    const hardLevel = document.querySelector("#hardLevel")
+    const easyLevel = document.querySelector("#easyLevelBtn")
+    const hardLevel = document.querySelector("#hardLevelBtn")
 
+    const gameOverScreen = document.querySelector("#gameOverContainer")
+
+    const generateRandomExpression = () => {
+        const num1 = Math.floor(Math.random() * 10)
+        const num2 = Math.floor(Math.random() * 10)
+
+        return `${num1} + ${num2}`
+    }
+
+    const populateProblems = () => {
+        for(let i =0; i < problemsHeader.length; i++){
+            problemsHeader[i].innerHTML = generateRandomExpression()
+        }
+    }
+
+    const getCorrectAnswer = () => {
+        const randomIndex = Math.floor(Math.random() * 5)
+        const correctExpression = problemsHeader[randomIndex].innerText
+        console.log(`Correct expression: ${correctExpression}`)
+        return parseInt(correctExpression[0]) + parseInt(correctExpression[4])
+    }
+
+    
 
    gameRulesBtn.addEventListener("click",()=>
     { 
@@ -80,11 +104,19 @@ const main = (()=>
             playerDetails.style.display = "none"
             playArea.style.display = "block"
 
+            startGame()
+
         }
 
     })
 
-   const cannonAnswer = 8
+    populateProblems()
+    let canonAnswer = getCorrectAnswer()
+    canonText.innerText = canonAnswer
+
+
+
+    const startGame = () => {
 
         setInterval(()=>
         {
@@ -94,7 +126,9 @@ const main = (()=>
                 marginPxMove += i;
                 spaceshipList[i].style.marginTop = `${marginPxMove}px`
 
-                spaceshipList[i].innerHTML = mathProblems[i]
+
+
+               
 
                 
                 let canonBox =cannon.getBoundingClientRect();
@@ -102,13 +136,16 @@ const main = (()=>
         
                         if(canonBox.top <= shipBox.bottom){
                             
-                           /*alert("Game over")*/
+                           /*alert("Game Over")
+                           playArea.style.display = "none"
+                           gameOverScreen.style.display = "block"*/
                            spaceshipList[i].style.marginTop = 0
                         } 
             }
             
             
         }, 1000)
+    }
         
 
          document.addEventListener("keydown",(event)=>
@@ -146,26 +183,33 @@ const main = (()=>
                         if(bulletBox.top <= shipBox.bottom){
 
                             
-                            const shipAnswer = parseInt(spaceshipList[i].innerText[0]) + parseInt(spaceshipList[i].innerText[4])
+                            const shipAnswer = parseInt(problemsHeader[i].innerText[0]) + parseInt(problemsHeader[i].innerText[4])
 
                             
-                            if(cannonAnswer === shipAnswer && i+1 === gridColumn  ){
+                            if(canonAnswer === shipAnswer && i+1 === gridColumn  ){
                                 hits++
                                 hitsCounter.innerText =  `Hits: ${hits}`
+                                
                                 spaceshipList[i].style.marginTop = 0
                              marginPxMove = 10;
                             bulletMargin = -10
                             bullet.style.display = "none"
                             bullet.style.marginTop = 0
+                            populateProblems()
+                                canonAnswer = getCorrectAnswer()
+                                canonText.innerText = canonAnswer
                             clearInterval(detectCollision)
                             } 
-                            else if (cannonAnswer !== shipAnswer && i+1 === gridColumn  ) {
+                            else if (canonAnswer !== shipAnswer && i+1 === gridColumn  ) {
                                 misses++
                                 missesCounter.innerText =  `Misses: ${misses}`
-
+                                
                                 bulletMargin = -10
                                 bullet.style.display = "none"
                                 bullet.style.marginTop = 0
+                                populateProblems()
+                                canonAnswer = getCorrectAnswer()
+                                canonText.innerText = canonAnswer
                                 clearInterval(detectCollision)
                             }
                             
