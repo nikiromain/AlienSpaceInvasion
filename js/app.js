@@ -244,6 +244,7 @@ const main = (() => {
       playerDetails.style.display = "none";
       displayName.innerText = `Name: ${playerNameInput.value}`
       playArea.style.display = "block";
+      displayName.innerText = `Name: ${playerNameInput.value}`
       gameDifficulty = "easy";
       setUpGame("+", playerName, gameDifficulty, 1);
       startGame();
@@ -253,6 +254,7 @@ const main = (() => {
     ) {
       playerDetails.style.display = "none";
       playArea.style.display = "block";
+      displayName.innerText = `Name: ${playerNameInput.value}`
       gameDifficulty = "hard";
       setUpGame("+", playerName, gameDifficulty, 1);
 
