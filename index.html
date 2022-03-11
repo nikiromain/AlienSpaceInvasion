@@ -38,6 +38,8 @@
             </div>
             <button type = "button" id = "startGameBtn"> Start Game </button>
 
+            <button type="button" id="load-game">Load Game</button>
+
             <img id="startOrStopImg" src="media/mute.png" alt="pauseButton">
             <audio id="audio" src="media/gameMusic.mp3" type="audio/mp3" loop>
             </audio>
@@ -55,7 +57,6 @@
                     <input type = "text" name="playerName" id = "playerName" autofocus>
                 </div>
             </section>
-
             <!-- Select Difficulty Level-->
             <section id = "difficulty">
                 <h3>Select Your Difficulty</h3>
@@ -84,24 +85,43 @@
                 </div>
             </section>
 
+        <hr>
+
             <!--Score & Timer -->
-            <div id = "timer"></div>
-            <div id = "hits"></div>
-            <div id = "misses"></div>
+            <div id = "gameDetails">
+                <div id = "displayName">Name:</div>
+                <div id = "timer"></div>
+                <div id = "hits"></div>
+                <div id = "misses"></div>
+                <div id="save-game">Save</div>
+            <div>
         </section>
 
-        <section id = gameOverContainer>
-            <div id = "gameOver">
-                 <h2 class = "animate__animated animate__hinge">Game Over</h2>
-                <div id="gameOverspaceships">
+         <!--Win Screen -->
+         <section id = "youWinContainer" hidden>
+            <div id = "youWin">
+               
+                 <h2 class = "animate__animated animate__zoomInDown">Good Job!</h2>
+                <div id="youWinScreenSpaceShips">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInRight animate__delay-1s">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-3s ">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-2s">
-                    <button type = "button" id = "playAgainBtn">Play Again?</button>
                 </div>
+               
+            </div>
+        </section>
+
+         <!--Game Over Screen -->
+        <section id = gameOverContainer hidden>
+            <div id = "gameOver">
+                 <h2 class = "animate__animated animate__hinge">Game Over</h2>
+                <div id="gameOverspaceships">
+                    <img src = "media/space.png" class = "animate__animated animate__backInDown animate__delay-1s">
+                </div>
+                <button type = "button" id = "playAgainBtn">Play Again?</button>
             </div>
         </section>
     </main>
-    <script src = "js/app.js"></script>
+    <script src = "js/app.js" type="module"></script>
 </body>
 </html>
