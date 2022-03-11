@@ -242,6 +242,7 @@ const main = (() => {
     let gameDifficulty;
     if (event.target.tagName == "BUTTON" && event.target.innerText == "Easy") {
       playerDetails.style.display = "none";
+      displayName.innerText = `Name: ${playerNameInput.value}`
       playArea.style.display = "block";
       gameDifficulty = "easy";
       setUpGame("+", playerName, gameDifficulty, 1);
