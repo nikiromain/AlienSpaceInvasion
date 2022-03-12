@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@100&family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel = "stylesheet" href = "css/stylesheet.css">
+    <link rel = "stylesheet" href = "css/sm-device.css">
     <title>Alien Invasion</title>
 </head>
 <body>
@@ -83,13 +84,15 @@
                 <img src = "media/tank.png">
                 <h3 id="canonAnswer"></h3>
                 </div>
+                
             </section>
+                <hr>
 
-        <hr>
+        
 
             <!--Score & Timer -->
             <div id = "gameDetails">
-                <div id = "displayName">Name:</div>
+                <p id = "displayName"></p>
                 <div id = "timer"></div>
                 <div id = "hits"></div>
                 <div id = "misses"></div>
@@ -98,16 +101,14 @@
         </section>
 
          <!--Win Screen -->
-         <section id = "youWinContainer" hidden>
+         <section id = "youWinContainer">
             <div id = "youWin">
-               
                  <h2 class = "animate__animated animate__zoomInDown">Good Job!</h2>
                 <div id="youWinScreenSpaceShips">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInRight animate__delay-1s">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-3s ">
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-2s">
                 </div>
-               
             </div>
         </section>
 
@@ -121,6 +122,20 @@
                 <button type = "button" id = "playAgainBtn">Play Again?</button>
             </div>
         </section>
+        <a href = "index.html">Home</a>
+        <!--Report Screen -->
+        <section id = "modalContainer" hidden>
+            <section id = "reportSection">
+                <div>
+                    <img src = "media/report.png" alt = "report-icon"><h4>Your Report</h4>
+                    <div>Name: </div>
+                    <div>Hits: </div>
+                    <div>Misses: </div>
+                    <div id = "level">Level: </div>
+                </div>
+            </section>
+        </section>
+    </section>
     </main>
     <script src = "js/app.js" type="module"></script>
 </body>
