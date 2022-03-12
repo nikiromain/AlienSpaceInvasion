@@ -3,12 +3,26 @@
 button{
     min-width: 48%;
 }
+
+#reportSection
+{
+  width: 350px;
+  height: 350px;
+  margin: 25% auto;
+}
 }
 
 @media (max-width: 575.98px)
 {
 button{
     min-width: 48%;
+}
+
+#reportSection
+{
+  width: 350px;
+  height: 350px;
+  margin: 25% auto;
 }
 }
 
