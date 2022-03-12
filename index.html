@@ -89,19 +89,19 @@
                 <hr>
 
         
-
-            <!--Score & Timer -->
-            <div id = "gameDetails">
-                <p id = "displayName"></p>
+ <!--Score & Timer -->
+         <div id = "gameDetails"> 
+               <!-- <p id = "displayName"></p>
                 <div id = "timer"></div>
                 <div id = "hits"></div>
-                <div id = "misses"></div>
+                <div id = "misses"></div>-->
+                <div id = "timer"></div>
                 <div id="save-game">Save</div>
             <div>
-        </section>
+        </section>-->
 
          <!--Win Screen -->
-         <section id = "youWinContainer">
+         <!-- <section id = "youWinContainer">
             <div id = "youWin">
                  <h2 class = "animate__animated animate__zoomInDown">Good Job!</h2>
                 <div id="youWinScreenSpaceShips">
@@ -110,10 +110,10 @@
                     <img src = "media/spaceship.png" class = "animate__animated animate__fadeInUpBig animate__delay-2s">
                 </div>
             </div>
-        </section>
+        </section>-->
 
          <!--Game Over Screen -->
-        <section id = gameOverContainer hidden>
+        <section id = "gameOverContainer">
             <div id = "gameOver">
                  <h2 class = "animate__animated animate__hinge">Game Over</h2>
                 <div id="gameOverspaceships">
@@ -123,14 +123,20 @@
             </div>
         </section>
         <a href = "index.html">Home</a>
+
+
         <!--Report Screen -->
-        <section id = "modalContainer" hidden>
+        <section id = "modalContainer">
             <section id = "reportSection">
                 <div>
-                    <img src = "media/report.png" alt = "report-icon"><h4>Your Report</h4>
-                    <div>Name: </div>
-                    <div>Hits: </div>
-                    <div>Misses: </div>
+                    <div id = "modal-header">
+                    <img src = "media/report.png" alt = "report-icon">
+                    <span id = "closeModal">Close</span>
+                </div>
+                    <h4>Your Report</h4>
+                    <p id = "displayName">Name:</p>
+                    <div id = "hits">Hits:</div>
+                    <div id = "misses">Misses:</div>
                     <div id = "level">Level: </div>
                 </div>
             </section>
