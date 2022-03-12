@@ -322,11 +322,25 @@ const main = (() => {
     }
   });
   
+    
   playAgainBtn.addEventListener("click",()=>
   {
-     gameOverScreen.style.display = "none";
-     playerDetails.style.display = "block";
+
+      gameOverScreen.style.display = "none";
+      playerDetails.style.display = "block";
+    
   });
+
+  saveButton.addEventListener("click", () =>
+  {
+    modalContainer.style.display = "block"
+    displayName.innerText = `Name: ${playerNameInput.value}`
+    hitsCounter.innerText = `Hits: ${gameData.hits}`;
+    missesCounter.innerText = `Misses: ${gameData.misses}`;
+    timer.innerText = `Timer : ${gameData.timeLeft}`;
+    level.innerText = `Level: ${gameData.level}`;
+
+  })
 
 
 })();
