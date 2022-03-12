@@ -1,258 +1,9 @@
-*
-{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body
-{
-    background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%);
-    font-family: 'Amatic SC', cursive;
-    font-family: 'Syne Mono', monospace;
-    
-}
-
-#startOrStopImg
-{
-    position: fixed;
-    bottom: 10px;
-    right: 12px;
-}
-
-/*welcome Screen*/
-
-#welcomeScreen
-{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    height: 100vh;
-    background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%); 
-}
-
-h1
-{
-    color:white;
-    font-size: 3rem;
-    margin: 95px 0 10px 0;
-}
-
-.spaceshipImage
-{
-    margin: 18px;
-    animation: shakeY;
-    animation-duration: 17s;
-}
-
-#rules
-{
-    background-image: linear-gradient(315deg, #99da45 0%, #0f8f1a 74%);
-    transition: 500ms;
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    border:rgba(65, 132, 234, 0.75);
-}
-
-#rulesContainer
-{
-    color:white;
-    font-size: 1rem;
-    width: 55vw;
-
-}
-
-.displayRules
-{
-    display: block;
-}
-
-#gameRulesBtn, #startGameBtn, #playAgainBtn
-{ 
-    background-color: transparent;
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    border: 2px solid white;
-}
-
-#startGameBtn:hover
-{
-    background-image: linear-gradient(-315deg, #702428 64%, #ce4158 0%);
-}
-
-#gameRulesBtn:hover
-{
-    background-image: linear-gradient(-315deg, #702428 64%, #ce4158 0%);
-}
-
-#startGameBtn:active
-{
-    animation: lightSpeedOutRight;
-}
-
-
-
-/*Player Details*/
-#playerDetails
-{
-    display: grid;
-    grid-template-columns: 45% 55%;
-    padding-top: 15vh; 
-}
-
-#playerAvatar
-{
-    background-image: url("../media/playerAvatar.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: 5px solid white;
-    justify-self:end;
-}
-
-
-#name
-{
-    align-self: center;
-    padding-left: 25px;
-    justify-self: start;
-}
-
-label
-{
-    font-size: 1.7rem;
-    color: white;
-}
-
-input[type=text]
-{
-    border: none;
-    border-bottom: 2px solid rgb(255, 255, 255);
-    width: 280px;
-    padding: 35px 2px 7px 2px;
-    font-size: 1.3rem;
-    outline: none;
-    background-color: transparent;
-    color: white;
-    font-family: 'Syne Mono', monospace;
-    -webkit-animation: type 5s steps(40, end);
-    animation: type 5s steps(40, end);
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-#difficulty
-{
-    margin-top: 100px;
-    display:grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
-
-#difficulty h3
-{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: white;
-}
-
-button
-{
-    padding: 9px;
-    width: 18%;
-    margin: 10px 0;
-    cursor: pointer;
-    border-radius: 15%;
-    transition: 500ms;
-    color: white;
-    font-family: 'Syne Mono', monospace;
-    height: 48px;
-    font-size: 1.5rem;
-}
-
-#easyLevelBtn
-{
-    background-image: linear-gradient(315deg, #99da45 0%, #0f8f1a 74%);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    border:rgba(65, 132, 234, 0.75);
-    margin-bottom: 45px;
-}
-
-#hardLevelBtn
-{
-    background-image: linear-gradient(315deg, #c76e6e 0%, #b10c22 74%);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    border:rgba(65, 132, 234, 0.75);
-}
-
-#difficulty>button:hover 
-{
-	background-position: right;
-}
-
-#easyLevelBtn:hover
-{
-    background-position: right;
-    background-image: linear-gradient(-315deg, #0f8f1a 74%, #99da45 0%);
-}
-
-#hardLevelBtn:hover
-{
-    background-position: right;
-    background-image: linear-gradient(-315deg, #e21717 74%, #e45542 0%);
-}
-
-
-/*Player Screen*/
-#playerScreen
-{
-    background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%);
-    height: 100vh;
-    display:none;
-}
-
-#playArea
-{
-    background-image: url("../media/stars.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    display:none;
-}
-
-#spaceshipContainer
-{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 16px;
-    margin:auto;
-    justify-items: center;
-    height: 76vh;
-
-}
-
-.spaceships
-{
-    height: 85px;
-    width: 50px;
-    
-}
-
-.spaceships img{
-    transform: rotate(180deg);
-}
-
-.problem
-{
-    font-size: 1rem;
-    margin-top: -50px;
-    background-color: black;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%);
@@ -359,7 +110,7 @@ label {
 input[type="text"] {
   border: none;
   border-bottom: 2px solid rgb(255, 255, 255);
-  width: 280px;
+  width: 88%;
   padding: 35px 2px 7px 2px;
   font-size: 1.3rem;
   outline: none;
@@ -386,7 +137,7 @@ input[type="text"] {
 }
 
 button {
-  padding: 9px;
+ 
   width: 18%;
   margin: 10px 0;
   cursor: pointer;
@@ -394,9 +145,12 @@ button {
   transition: 500ms;
   color: white;
   font-family: "Syne Mono", monospace;
-  height: 48px;
-  font-size: 1.5rem;
+  height: 3rem;
+  min-height: 3rem;
+  font-size: 1.3rem;
+  
 }
+
 
 #easyLevelBtn {
   background-image: linear-gradient(315deg, #99da45 0%, #0f8f1a 74%);
@@ -423,6 +177,15 @@ button {
 #hardLevelBtn:hover {
   background-position: right;
   background-image: linear-gradient(-315deg, #e21717 74%, #e45542 0%);
+}
+
+a
+{
+  color:white;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 10px;
+  left: 12px;
 }
 
 /*Player Screen*/
@@ -494,6 +257,7 @@ button {
 #displayName,
 #hits,
 #misses,
+#level,
 #save-game {
   color: white;
   font-size: 1.2rem;
@@ -506,7 +270,7 @@ button {
 
 #gameOverContainer,
 #youWinContainer {
-  display: none;
+ display: none;
   height: 100vh;
   background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%);
   padding-top: 10%;
@@ -523,6 +287,7 @@ h2 {
   justify-self: center;
   align-self: center;
   animation-delay: 2s;
+  margin-bottom: 15px;
 }
 
 #gameOverspaceships,
@@ -544,7 +309,8 @@ h2 {
 hr
 {
   color: white;
-  margin: 15px 100px 10px 100px;
+  width: 90%;
+  margin: 15px 5%;
 }
 
 #gameDetails
@@ -554,3 +320,36 @@ hr
   justify-items: center;
 }
 
+#modalContainer
+{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #9756a04d;
+  display:grid;
+  visibility: hidden;
+}
+#reportSection
+{
+  width: 350px;
+  height: 350px;
+  border-radius: 15px;
+  background-image: linear-gradient(315deg, #130e3a 0%, #021304 74%);
+  padding: 25px;
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  border: rgba(65, 132, 234, 0.75);
+  color: white; 
+  line-height: 2;
+  display: grid;
+}
+
+h4{
+  border-bottom: 2px white solid;
+  padding-bottom: 1px;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
