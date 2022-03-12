@@ -6,7 +6,7 @@ import GameData from "./GameData.js";
 
 const main = (() => {
   //Dom Elements
-  const splayArea = document.querySelector("#playArea");
+  const playArea = document.querySelector("#playArea");
   const spaceshipList = document.querySelectorAll(".spaceships");
   const problemsHeader = document.querySelectorAll(".problem");
   const cannon = document.querySelector("#cannon");
@@ -16,6 +16,7 @@ const main = (() => {
   const timer = document.querySelector("#timer");
   const hitsCounter = document.querySelector("#hits");
   const missesCounter = document.querySelector("#misses");
+  const level = document.querySelector("#level")
   const saveButton = document.querySelector("#save-game");
 
   const gameRulesBtn = document.querySelector("#gameRulesBtn");
@@ -39,6 +40,8 @@ const main = (() => {
   const playAgainBtn = document.querySelector("#playAgainBtn")
 
   const displayName = document.querySelector("#displayName")
+  const modalContainer = document.querySelector("#modalContainer")
+  const closeModal = document.querySelector("#closeModal")
 
 
   //Game variables
@@ -169,6 +172,7 @@ const main = (() => {
         if (hasCollided(cannon, spaceshipList[i])) {
           playArea.style.display = "none";
           gameOverScreen.style.display = "block";
+          audioToggle.pause()
           clearInterval(moveShip);
         }
 
@@ -176,7 +180,7 @@ const main = (() => {
           nextLevel();
         } else if (gameData.timeLeft <= 0 && gameData.level === 2) {
           playArea.style.display = "none";
-          youWinScreen.style.display = "block";
+          modalContainer.style.display= "block";
         
         }
       }
@@ -190,8 +194,8 @@ const main = (() => {
 
   imageSoundToggle.addEventListener("click", () => {
     if (audioToggle.paused) {
-      audioToggle.play();
-      imageSoundToggle.src = "media/volume.png";
+        audioToggle.play();
+        imageSoundToggle.src = "media/volume.png";
     } else {
       imageSoundToggle.src = "media/mute.png";
       imageSoundToggle.alt = "Pause Button";
@@ -242,7 +246,6 @@ const main = (() => {
     let gameDifficulty;
     if (event.target.tagName == "BUTTON" && event.target.innerText == "Easy") {
       playerDetails.style.display = "none";
-      displayName.innerText = `Name: ${playerNameInput.value}`
       playArea.style.display = "block";
       displayName.innerText = `Name: ${playerNameInput.value}`
       gameDifficulty = "easy";
@@ -254,7 +257,6 @@ const main = (() => {
     ) {
       playerDetails.style.display = "none";
       playArea.style.display = "block";
-      displayName.innerText = `Name: ${playerNameInput.value}`
       gameDifficulty = "hard";
       setUpGame("+", playerName, gameDifficulty, 1);
 
@@ -322,7 +324,6 @@ const main = (() => {
     }
   });
   
-    
   playAgainBtn.addEventListener("click",()=>
   {
 
@@ -342,5 +343,10 @@ const main = (() => {
 
   })
 
+  closeModal.addEventListener("click", ()=>
+  {
+      modalContainer.style.display = "none"
+  })
 
+  
 })();
