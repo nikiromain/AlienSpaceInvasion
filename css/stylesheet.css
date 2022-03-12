@@ -59,6 +59,7 @@ h1 {
 #gameRulesBtn,
 #startGameBtn,
 #playAgainBtn,
+#retryBtn,
 #load-game {
   background-color: transparent;
   box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
@@ -210,7 +211,7 @@ a
   column-gap: 16px;
   margin: auto;
   justify-items: center;
-  height: 82vh;
+  height: 85vh;
 }
 
 .spaceships {
@@ -223,11 +224,12 @@ a
 }
 
 .problem {
-  font-size: 1rem;
+  font-size: .9rem;
   margin-top: -50px;
   background-color: black;
-  padding: 3px;
+  padding: 2px;
   z-index: 5;
+  width: 125%;
   position: relative;
   border-radius: 3px;
 }
@@ -300,7 +302,8 @@ h2 {
   transform: rotate(-180deg);
 }
 
-#playAgainBtn
+#playAgainBtn ,
+#retryBtn
 {
   justify-self: center;
   margin-top: 25px;
@@ -328,8 +331,8 @@ hr
   left:0;
   width:100%;
   height: 100vh;
-  background-color: #9756a083;
-  
+  background-color: #57325c9d;
+ 
 }
 #reportSection
 {
